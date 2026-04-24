@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jenkins-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jenkins-demo
+  template:
+    metadata:
+      labels:
+        app: jenkins-demo
+    spec:
+      containers:
+      - name: app
+        image: yourdockerhub/jenkins-demo:v1
